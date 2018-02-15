@@ -19,7 +19,7 @@ public class EnemyHealthScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		currentEnemyHealth = enemyHealth;
+		this.currentEnemyHealth = enemyHealth;
 		rend = GetComponent<Renderer> ();
 		storedColor = rend.material.GetColor ("_Color");
 	}
@@ -27,9 +27,9 @@ public class EnemyHealthScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (currentEnemyHealth <= 0) 
+		if (this.currentEnemyHealth <= 0) 
 		{
-			enemyScript.enemyIsActive = false;
+			this.enemyScript.enemyIsActive = false;
 			rend.material.SetColor ("_Color", Color.white);
 			//Destroy (gameObject);
 		}
@@ -45,18 +45,18 @@ public class EnemyHealthScript : MonoBehaviour
 
 	public void DamageEnemy(int damage)
 	{
-		currentEnemyHealth -= damage;
+		this.currentEnemyHealth -= damage;
 		flashCounter = flashLength;
 		rend.material.SetColor ("_Color", Color.white);
 	}
 
 	public void OnTriggerEnter(Collider other)
 	{
-		if (!enemyScript.enemyIsActive) 
+		if (!this.enemyScript.enemyIsActive) 
 		{
 			if (other.gameObject.tag == "Player") 
 			{
-				Destroy (gameObject);
+				Destroy (this.gameObject);
 			}
 		}
 	}

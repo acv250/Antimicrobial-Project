@@ -17,18 +17,18 @@ public class EnemyScript : MonoBehaviour
 	{
 		myRigidbody = GetComponent <Rigidbody> ();
 		playerCharacter = FindObjectOfType<PlayerScript>();
-		enemyIsActive = true;
+		this.enemyIsActive = true;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		transform.LookAt (playerCharacter.transform.position);
+		this.transform.LookAt (playerCharacter.transform.position);
 	}
 
 	void FixedUpdate()
 	{
-		if (enemyIsActive)
+		if (this.enemyIsActive)
 		{
 			myRigidbody.velocity = (transform.forward * moveSpeed);	
 		}
