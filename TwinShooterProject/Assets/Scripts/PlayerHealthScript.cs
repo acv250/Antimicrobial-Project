@@ -14,6 +14,8 @@ public class PlayerHealthScript : MonoBehaviour
 	private Renderer rend;
 	private Color storedColor;
 
+	public EnemyScript enemyScript;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -41,8 +43,12 @@ public class PlayerHealthScript : MonoBehaviour
 
 	public void HurtPlayer(int damageAmount)
 	{
-		currentHealth -= damageAmount;
-		flashCounter = flashLength;
-		rend.material.SetColor ("_Color", Color.red);
+		if (enemyScript.enemyIsActive) 
+		{
+			currentHealth -= damageAmount;
+			flashCounter = flashLength;
+			rend.material.SetColor ("_Color", Color.red);
+		}
+
 	}
 }
