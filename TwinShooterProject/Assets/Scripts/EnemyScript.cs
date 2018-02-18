@@ -10,21 +10,28 @@ public class EnemyScript : MonoBehaviour
 
 	public PlayerScript playerCharacter;
 
+	public bool enemyIsActive;
+
 	// Use this for initialization
 	void Start () 
 	{
 		myRigidbody = GetComponent <Rigidbody> ();
 		playerCharacter = FindObjectOfType<PlayerScript>();
+		this.enemyIsActive = true;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		transform.LookAt (playerCharacter.transform.position);
+		this.transform.LookAt (playerCharacter.transform.position);
 	}
 
 	void FixedUpdate()
 	{
-		myRigidbody.velocity = (transform.forward * moveSpeed);
+		if (this.enemyIsActive)
+		{
+			myRigidbody.velocity = (transform.forward * moveSpeed);	
+		}
 	}
+		
 }

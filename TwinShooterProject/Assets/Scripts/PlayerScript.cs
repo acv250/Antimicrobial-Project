@@ -19,12 +19,36 @@ public class PlayerScript : MonoBehaviour {
 	{
 		myRigidbody = GetComponent<Rigidbody> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
-		moveInput = new Vector3 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
+		moveInput = new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		moveVelocity = moveInput * moveSpeed;
+
+
+		//player border limits x-axis
+		if (this.transform.position.x <= -8.0f) 
+		{
+			transform.position = new Vector2 (-8.0f, transform.position.y);
+			Debug.Log ("out of bounds");
+		} else if (this.transform.position.x >= 8.0f) 
+		{
+			transform.position = new Vector2(8.0f, transform.position.y);
+			Debug.Log ("out of bounds");
+		}
+		//player border limits y-axis
+		if (this.transform.position.y <= -4.0f) 
+		{
+			transform.position = new Vector2 (transform.position.x, -4.0f);
+			Debug.Log ("out of bounds");
+		} else if (this.transform.position.y >= 4.0f) 
+		{
+			transform.position = new Vector2(transform.position.x, 4.0f);
+			Debug.Log ("out of bounds");
+		}
+
+
 		Rotation ();
 		//Mouse Rotation
 
@@ -72,6 +96,8 @@ public class PlayerScript : MonoBehaviour {
 				playerShoot.isFiring = false;
 			}
 		}*/
+
+		//Debug.Log (this.transform.position);
 	}
 
 	void FixedUpdate()
