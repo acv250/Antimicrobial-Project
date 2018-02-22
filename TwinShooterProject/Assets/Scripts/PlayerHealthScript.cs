@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthScript : MonoBehaviour 
 {
@@ -16,6 +17,8 @@ public class PlayerHealthScript : MonoBehaviour
 
 	public EnemyScript enemyScript;
 
+	public Text lifeText;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -27,9 +30,12 @@ public class PlayerHealthScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (currentHealth <= 0) 
+		if (currentHealth <= 0)
 		{
 			gameObject.SetActive (false);
+		} else
+		{
+			gameObject.SetActive (true);
 		}
 		if (flashCounter > 0) 
 		{
@@ -39,6 +45,7 @@ public class PlayerHealthScript : MonoBehaviour
 				rend.material.SetColor ("_Color", storedColor);
 			}
 		}
+		lifeText.text = "LIVES: " + currentHealth;
 	}
 
 	public void HurtPlayer(int damageAmount)
