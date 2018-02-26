@@ -10,16 +10,27 @@ public class ElapsedTimeScript : MonoBehaviour
 	public Text timerText;
 	public float speed = 1;
 
+	public PlayerHealthScript pHealthScript;
+
 	// Update is called once per frame
 	void Update () 
 	{
+
+		if (pHealthScript.playerIsActive) {
+			speed = 1;
+		} else {
+			speed = 0;
+		}
+
 		timer += Time.deltaTime * speed;
 
-		string hours = Mathf.Floor ((timer % 21600) / 3600).ToString ("00");
-		string minutes = Mathf.Floor((timer % 3600) / 60).ToString ("00");
-		string seconds = (timer % 60).ToString ("00");
+		int minutes;
+		float seconds;
 
-		timerText.text = hours + ":" + minutes + ":" + seconds;
+		minutes = Mathf.FloorToInt (timer / 60);
+		seconds = timer % 60;
+
+		timerText.text = string.Format("{00}:{1:00.00}", minutes, seconds);
 
 
 	}

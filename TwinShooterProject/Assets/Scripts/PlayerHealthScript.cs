@@ -8,6 +8,7 @@ public class PlayerHealthScript : MonoBehaviour
 
 	public int startHealth;
 	public int currentHealth;
+	public bool playerIsActive;
 
 	public float flashLength;
 	private float flashCounter;
@@ -25,6 +26,7 @@ public class PlayerHealthScript : MonoBehaviour
 		currentHealth = startHealth;
 		rend = GetComponent<Renderer> ();
 		storedColor = rend.material.GetColor ("_Color");
+		playerIsActive = true;
 	}
 	
 	// Update is called once per frame
@@ -32,6 +34,7 @@ public class PlayerHealthScript : MonoBehaviour
 	{
 		if (currentHealth <= 0)
 		{
+			playerIsActive = false;
 			gameObject.SetActive (false);
 		} else
 		{

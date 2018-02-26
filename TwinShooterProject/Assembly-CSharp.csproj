@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AddBuoyancy.cs" />
+     <Compile Include="Assets\Scripts\AntimicrobialTimerScript.cs" />
      <Compile Include="Assets\Scripts\BulletControlScript.cs" />
      <Compile Include="Assets\Scripts\Chatbox.cs" />
      <Compile Include="Assets\Scripts\DamagePlayerScript.cs" />
