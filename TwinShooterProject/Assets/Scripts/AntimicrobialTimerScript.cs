@@ -12,6 +12,8 @@ public class AntimicrobialTimerScript : MonoBehaviour {
 
 	public bool useAntimicrobial;
 
+	private float amCooldown;
+
 	public PlayerHealthScript pHealthScript;
 
 	// Use this for initialization
@@ -20,17 +22,17 @@ public class AntimicrobialTimerScript : MonoBehaviour {
 		amTimer = 30f;	
 		amSpeed = 1;
 		useAntimicrobial = false;
+		amCooldown = 10;
+		amTimerIncrement = 2;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 
-		if (pHealthScript.playerIsActive) {
-			amSpeed = 1;
-		} else {
+		if (!pHealthScript.playerIsActive) {
 			amSpeed = 0;
-		}
+		} 
 
 		amTimer -= Time.deltaTime * amSpeed;
 
@@ -40,11 +42,20 @@ public class AntimicrobialTimerScript : MonoBehaviour {
 		minutes = Mathf.FloorToInt (amTimer / 60);
 		seconds = amTimer % 60;
 
-		amTimerText.text = "NEW ANTIMICROBIAL: " + string.Format("{00}:{1:00.00}", minutes, seconds);
-
 		if (amTimer <= 0) 
 		{
 			amTimerText.text = "NEW ANTIMICROBIAL: AVAILABLE!";
+		} else 
+		{
+			amTimerText.text = "NEW ANTIMICROBIAL: " + string.Format("{00}:{1:00.00}", minutes, seconds);
+		}
+
+		if (Input.GetMouseButtonDown (1) && amTimer <= 0) 
+		{
+			Debug.Log ("Use Antimicrobial");
+			amTimer = 30f * amTimerIncrement;
+
+			amTimerIncrement = amTimerIncrement + 1;
 		}
 
 	}

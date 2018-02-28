@@ -7,6 +7,7 @@ public class EnemyHealthScript : MonoBehaviour
 
 	public int enemyHealth;
 	public int currentEnemyHealth;
+	private int resistVar;
 
 	public float flashLength;
 	private float flashCounter;
@@ -19,7 +20,8 @@ public class EnemyHealthScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		this.currentEnemyHealth = enemyHealth;
+		resistVar = 1;
+		this.currentEnemyHealth = enemyHealth * resistVar;
 		rend = GetComponent<Renderer> ();
 		storedColor = rend.material.GetColor ("_Color");
 	}

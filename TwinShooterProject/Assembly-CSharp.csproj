@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\ElapsedTimeScript.cs" />
      <Compile Include="Assets\Scripts\EnemyHealthScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawnManager.cs" />
      <Compile Include="Assets\Scripts\FourierCPU.cs" />
      <Compile Include="Assets\Scripts\LoadSceneIndex.cs" />
      <Compile Include="Assets\Scripts\Ocean.cs" />
