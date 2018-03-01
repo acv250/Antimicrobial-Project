@@ -54,7 +54,7 @@ public class EnemyHealthScript : MonoBehaviour
 
 	public void OnTriggerEnter(Collider other)
 	{
-		if (!this.enemyScript.enemyIsActive) 
+		if (this.currentEnemyHealth <= 0) 
 		{
 			if (other.gameObject.tag == "Player") 
 			{

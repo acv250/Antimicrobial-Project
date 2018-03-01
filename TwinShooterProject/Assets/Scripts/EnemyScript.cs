@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour
 	public float moveSpeed;
 
 	public PlayerScript playerCharacter;
+	public EnemyHealthScript eHeatlhScript;
 
 	public bool enemyIsActive;
 
