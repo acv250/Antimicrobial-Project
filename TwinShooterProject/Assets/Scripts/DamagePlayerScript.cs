@@ -6,10 +6,11 @@ public class DamagePlayerScript : MonoBehaviour
 {
 
 	public int damageValue;
+	public GameObject enemyCollider;
 
 	public void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Player") 
+		if (other.gameObject.tag == "Player" && this.enemyCollider.activeInHierarchy) 
 		{
 			other.gameObject.GetComponent<PlayerHealthScript> ().HurtPlayer (damageValue);
 		}

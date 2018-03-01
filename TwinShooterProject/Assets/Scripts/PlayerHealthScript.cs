@@ -53,12 +53,12 @@ public class PlayerHealthScript : MonoBehaviour
 
 	public void HurtPlayer(int damageAmount)
 	{
-		if (enemyScript.enemyIsActive) 
-		{
+		//if (enemyScript.enemyIsActive) 
+		//{
 			currentHealth -= damageAmount;
 			flashCounter = flashLength;
 			rend.material.SetColor ("_Color", Color.red);
-		}
+		//}
 
 	}
 }
