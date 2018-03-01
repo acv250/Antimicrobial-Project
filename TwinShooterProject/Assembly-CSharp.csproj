@@ -3,14 +3,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.20506</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
     <ProjectGuid>{AF7C8DB6-FF6D-8DFA-B377-DC01B740294C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
@@ -34,78 +33,79 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.XML" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AddBuoyancy.cs" />
-     <Compile Include="Assets\Scripts\AntimicrobialTimerScript.cs" />
-     <Compile Include="Assets\Scripts\BulletControlScript.cs" />
-     <Compile Include="Assets\Scripts\Chatbox.cs" />
-     <Compile Include="Assets\Scripts\DamagePlayerScript.cs" />
-     <Compile Include="Assets\Scripts\DetectControlMethod.cs" />
-     <Compile Include="Assets\Scripts\ElapsedTimeScript.cs" />
-     <Compile Include="Assets\Scripts\EnemyHealthScript.cs" />
-     <Compile Include="Assets\Scripts\EnemyScript.cs" />
-     <Compile Include="Assets\Scripts\EnemySpawnManager.cs" />
-     <Compile Include="Assets\Scripts\FourierCPU.cs" />
-     <Compile Include="Assets\Scripts\LoadSceneIndex.cs" />
-     <Compile Include="Assets\Scripts\Ocean.cs" />
-     <Compile Include="Assets\Scripts\PlayerHealthScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerShootScript.cs" />
-     <Compile Include="Assets\Scripts\QuitOnClick.cs" />
-     <Compile Include="Assets\Scripts\StartOnInput.cs" />
-     <Compile Include="Assets\Scripts\WaveSpectriumCPU.cs" />
-     <Compile Include="Assets\Water (Basic)\Scripts\WaterBasic.cs" />
-     <Compile Include="Assets\Water\Water\Scripts\Displace.cs" />
-     <Compile Include="Assets\Water\Water\Scripts\GerstnerDisplace.cs" />
-     <Compile Include="Assets\Water\Water\Scripts\MeshContainer.cs" />
-     <Compile Include="Assets\Water\Water\Scripts\PlanarReflection.cs" />
-     <Compile Include="Assets\Water\Water\Scripts\SpecularLighting.cs" />
-     <Compile Include="Assets\Water\Water\Scripts\Water.cs" />
-     <Compile Include="Assets\Water\Water\Scripts\WaterBase.cs" />
-     <Compile Include="Assets\Water\Water\Scripts\WaterTile.cs" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.VR">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
- </Reference>
- <Reference Include="Photon3Unity3D">
- <HintPath>D:/15082895/FinalYearProject/TwinShooterProject/Assets/Plugins/Photon3Unity3D.dll</HintPath>
- </Reference>
- <Reference Include="websocket-sharp">
- <HintPath>D:/15082895/FinalYearProject/TwinShooterProject/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\Scripts\AddBuoyancy.cs" />
+    <Compile Include="Assets\Scripts\AntimicrobialTimerScript.cs" />
+    <Compile Include="Assets\Scripts\BulletControlScript.cs" />
+    <Compile Include="Assets\Scripts\DamagePlayerScript.cs" />
+    <Compile Include="Assets\Scripts\DetectControlMethod.cs" />
+    <Compile Include="Assets\Scripts\ElapsedTimeScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealthScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawnManager.cs" />
+    <Compile Include="Assets\Scripts\FourierCPU.cs" />
+    <Compile Include="Assets\Scripts\LoadSceneIndex.cs" />
+    <Compile Include="Assets\Scripts\Ocean.cs" />
+    <Compile Include="Assets\Scripts\PlayerHealthScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerShootScript.cs" />
+    <Compile Include="Assets\Scripts\QuitOnClick.cs" />
+    <Compile Include="Assets\Scripts\StartOnInput.cs" />
+    <Compile Include="Assets\Scripts\WaveSpectriumCPU.cs" />
+    <Compile Include="Assets\Water\Water\Scripts\Displace.cs" />
+    <Compile Include="Assets\Water\Water\Scripts\GerstnerDisplace.cs" />
+    <Compile Include="Assets\Water\Water\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\Water\Water\Scripts\PlanarReflection.cs" />
+    <Compile Include="Assets\Water\Water\Scripts\SpecularLighting.cs" />
+    <Compile Include="Assets\Water\Water\Scripts\Water.cs" />
+    <Compile Include="Assets\Water\Water\Scripts\WaterBase.cs" />
+    <Compile Include="Assets\Water\Water\Scripts\WaterTile.cs" />
+    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:\Program Files\Unity\Editor\Data\UnityExtensions\Unity\GUISystem\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>C:\Program Files\Unity\Editor\Data\UnityExtensions\Unity\Networking\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>C:\Program Files\Unity\Editor\Data\UnityExtensions\Unity\TestRunner\UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>C:\Program Files\Unity\Editor\Data\UnityExtensions\Unity\TestRunner\net35\unity-custom\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:\Program Files\Unity\Editor\Data\UnityExtensions\Unity\UnityAnalytics\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>C:\Program Files\Unity\Editor\Data\UnityExtensions\Unity\UnityHoloLens\RuntimeEditor\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>C:\Program Files\Unity\Editor\Data\UnityExtensions\Unity\UnityVR\RuntimeEditor\UnityEngine.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>C:\Users\Alex\Documents\GitHub\Antimicrobial-Project\TwinShooterProject\Assets\Plugins\Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>C:\Users\Alex\Documents\GitHub\Antimicrobial-Project\TwinShooterProject\Assets\Plugins\WebSocket\websocket-sharp.dll</HintPath>
+    </Reference>
+    <Compile Include="Assets\Water %28Basic%29\Scripts\WaterBasic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{7DD3960F-79A6-6AA9-659A-9D89D5A5207D}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{7DD3960F-79A6-6AA9-659A-9D89D5A5207D}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -115,5 +115,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
