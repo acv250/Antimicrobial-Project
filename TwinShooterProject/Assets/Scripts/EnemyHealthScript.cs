@@ -7,7 +7,7 @@ public class EnemyHealthScript : MonoBehaviour
 
 	public int enemyHealth;
 	public int currentEnemyHealth;
-	private int resistVar;
+	public int resistVar;
 
 	public float flashLength;
 	private float flashCounter;
@@ -23,7 +23,7 @@ public class EnemyHealthScript : MonoBehaviour
 	void Start ()
 	{
 		resistVar = 1;
-		this.currentEnemyHealth = enemyHealth * resistVar;
+		this.currentEnemyHealth = enemyHealth + resistVar;
 		rend = GetComponent<Renderer> ();
 		storedColor = rend.material.GetColor ("_Color");
 		this.enemyCollider.SetActive (true);
@@ -33,6 +33,7 @@ public class EnemyHealthScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+
 		if (this.currentEnemyHealth <= 0) 
 		{
 			this.enemyScript.enemyIsActive = false;
@@ -55,7 +56,7 @@ public class EnemyHealthScript : MonoBehaviour
 	{
 		this.currentEnemyHealth -= damage;
 		flashCounter = flashLength;
-		rend.material.SetColor ("_Color", Color.white);
+		rend.material.SetColor ("_Color", Color.cyan);
 	}
 
 	public void OnTriggerEnter(Collider other)

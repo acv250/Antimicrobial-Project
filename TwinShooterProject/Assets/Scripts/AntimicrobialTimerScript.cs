@@ -12,9 +12,8 @@ public class AntimicrobialTimerScript : MonoBehaviour {
 
 	public bool useAntimicrobial;
 
-	private float amCooldown;
-
 	public PlayerHealthScript pHealthScript;
+	public EnemyHealthScript eHealthScript;
 
 	// Use this for initialization
 	void Start () 
@@ -22,7 +21,6 @@ public class AntimicrobialTimerScript : MonoBehaviour {
 		amTimer = 30f;	
 		amSpeed = 1;
 		useAntimicrobial = false;
-		amCooldown = 10;
 		amTimerIncrement = 2;
 	}
 	
@@ -57,6 +55,8 @@ public class AntimicrobialTimerScript : MonoBehaviour {
 
 			amTimerIncrement = amTimerIncrement + 1;
 		}
+
+
 
 	}
 }

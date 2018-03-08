@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemySpawnManager : MonoBehaviour 
 {
 
+	public PlayerHealthScript pHealthScript;
 	public GameObject[] enemies;
 	public Vector2 spawnValues;
 	public float spawnWait;
 	public float spawnMinWait;
 	public float spawnMaxWait;
 	public int startWait;
-	public bool isSpawning;
+	public bool stopSpawn;
 
 	private int enemyID;
 
@@ -19,22 +20,29 @@ public class EnemySpawnManager : MonoBehaviour
 	void Start () 
 	{
 		StartCoroutine (SpawnEnemy());
+		stopSpawn = false;
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
 		spawnWait = Random.Range (spawnMinWait, spawnMaxWait);
+
+		if (pHealthScript.currentHealth <= 0) 
+		{
+			stopSpawn = true;
+			StopCoroutine (SpawnEnemy ());
+		}
 	}
 
 	IEnumerator SpawnEnemy()
 	{
 		yield return new WaitForSeconds (startWait);
 
-		while (!isSpawning) 
+		while (!stopSpawn) 
 		{
 			enemyID = 0;
-			Vector2 spawnPosition = new Vector2 (Random.Range (-spawnValues.x * 2, spawnValues.x * 2), Random.Range (-spawnValues.y * 2, spawnValues.y * 2));
+			Vector2 spawnPosition = new Vector2 (Random.Range (-spawnValues.x - 10, spawnValues.x + 10), Random.Range (-spawnValues.y - 10, spawnValues.y + 10));
 
 			Instantiate (enemies[enemyID], spawnPosition, gameObject.transform.rotation);
 
