@@ -34,7 +34,7 @@ public class EnemySpawnManager : MonoBehaviour
 		while (!isSpawning) 
 		{
 			enemyID = 0;
-			Vector2 spawnPosition = new Vector2 (Random.Range (-spawnValues.x, spawnValues.x), Random.Range (-spawnValues.y, spawnValues.y));
+			Vector2 spawnPosition = new Vector2 (Random.Range (-spawnValues.x * 2, spawnValues.x * 2), Random.Range (-spawnValues.y * 2, spawnValues.y * 2));
 
 			Instantiate (enemies[enemyID], spawnPosition, gameObject.transform.rotation);
 
