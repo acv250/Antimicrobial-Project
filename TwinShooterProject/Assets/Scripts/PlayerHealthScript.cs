@@ -17,6 +17,7 @@ public class PlayerHealthScript : MonoBehaviour
 	private Color storedColor;
 
 	public EnemyScript enemyScript;
+	public CanvasGroup gameOverCanvas;
 
 	public Text lifeText;
 

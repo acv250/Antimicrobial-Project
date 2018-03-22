@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour
 {
 
 	private Rigidbody myRigidbody;
-	public float moveSpeed;
+	private float moveSpeed;
 
 	public PlayerScript playerCharacter;
 
@@ -18,6 +18,7 @@ public class EnemyScript : MonoBehaviour
 		myRigidbody = GetComponent <Rigidbody> ();
 		playerCharacter = FindObjectOfType<PlayerScript>();
 		this.enemyIsActive = true;
+		moveSpeed = Random.Range (1.0f, 2.0f);
 	}
 	
 	// Update is called once per frame
