@@ -5,9 +5,12 @@ using UnityEngine;
 public class EnemyHealthScript : MonoBehaviour
 {
 
-	public int enemyHealth;
-	public int currentEnemyHealth;
-	public int resistVar;
+	public float enemyHealth;
+	public float currentEnemyHealth;
+	public float resistVar;
+	public int scoreShoot = 1;
+	public int scoreAbsorb = 5;
+	public int amDamage = 2;
 
 	public float flashLength;
 	private float flashCounter;
@@ -22,8 +25,8 @@ public class EnemyHealthScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		resistVar = 1;
-		this.currentEnemyHealth = enemyHealth + resistVar;
+		resistVar = 1.0f;
+		this.currentEnemyHealth = enemyHealth * resistVar;
 		rend = GetComponent<Renderer> ();
 		storedColor = rend.material.GetColor ("_Color");
 		this.enemyCollider.SetActive (true);
@@ -50,13 +53,24 @@ public class EnemyHealthScript : MonoBehaviour
 				rend.material.SetColor ("_Color", storedColor);
 			}
 		}
+
+		if (AntimicrobialTimerScript.useAntimicrobial) 
+		{
+			this.currentEnemyHealth -= amDamage;
+			ScoreScript.scoreAmount += amDamage;
+		}
+
 	}
 
 	public void DamageEnemy(int damage)
 	{
-		this.currentEnemyHealth -= damage;
-		flashCounter = flashLength;
-		rend.material.SetColor ("_Color", Color.cyan);
+		if (this.enemyCollider.activeInHierarchy) 
+		{
+			this.currentEnemyHealth -= damage;
+			flashCounter = flashLength;
+			rend.material.SetColor ("_Color", Color.cyan);
+			ScoreScript.scoreAmount += scoreShoot;
+		}
 	}
 
 	public void OnTriggerEnter(Collider other)
@@ -68,6 +82,7 @@ public class EnemyHealthScript : MonoBehaviour
 			if (other.gameObject.tag == "Player") 
 			{
 				Destroy (this.gameObject);
+				ScoreScript.scoreAmount += scoreAbsorb;
 			}
 		}
 	}
