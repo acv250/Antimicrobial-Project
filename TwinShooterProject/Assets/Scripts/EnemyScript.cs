@@ -24,6 +24,7 @@ public class EnemyScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		playerCharacter = FindObjectOfType<PlayerScript>();
 		if (this.enemyIsActive) 
 		{
 			this.transform.LookAt (playerCharacter.transform.position);

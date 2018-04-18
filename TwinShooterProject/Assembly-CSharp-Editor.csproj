@@ -100,6 +100,9 @@
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.WebGL.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
  </Reference>
@@ -107,13 +110,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/Users/Alex/Documents/GitHub/Antimicrobial-Project/TwinShooterProject/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>D:/15082895/FinalYearProject/TwinShooterProject/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>C:/Users/Alex/Documents/GitHub/Antimicrobial-Project/TwinShooterProject/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>D:/15082895/FinalYearProject/TwinShooterProject/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="ShaderForge">
- <HintPath>C:/Users/Alex/Documents/GitHub/Antimicrobial-Project/TwinShooterProject/Assets/ShaderForge/Editor/ShaderForge.dll</HintPath>
+ <HintPath>D:/15082895/FinalYearProject/TwinShooterProject/Assets/ShaderForge/Editor/ShaderForge.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

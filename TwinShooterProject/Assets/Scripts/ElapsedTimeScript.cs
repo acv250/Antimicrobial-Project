@@ -12,10 +12,15 @@ public class ElapsedTimeScript : MonoBehaviour
 
 	public PlayerHealthScript pHealthScript;
 
+	void Start()
+	{
+		pHealthScript = FindObjectOfType<PlayerHealthScript>();
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
-
+		pHealthScript = FindObjectOfType<PlayerHealthScript>();
 		if (pHealthScript.playerIsActive) {
 			speed = 1;
 		} else {

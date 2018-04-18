@@ -17,13 +17,15 @@ public class PlayerHealthScript : MonoBehaviour
 	private Color storedColor;
 
 	public EnemyScript enemyScript;
-	public CanvasGroup gameOverCanvas;
 
 	public Text lifeText;
 
 	// Use this for initialization
 	void Start () 
 	{
+
+		lifeText = FindObjectOfType<Text> ();
+
 		currentHealth = startHealth;
 		rend = GetComponent<Renderer> ();
 		storedColor = rend.material.GetColor ("_Color");

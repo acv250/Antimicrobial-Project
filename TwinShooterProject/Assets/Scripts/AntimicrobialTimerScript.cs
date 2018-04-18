@@ -23,12 +23,13 @@ public class AntimicrobialTimerScript : MonoBehaviour {
 		useAntimicrobial = false;
 		amTimerIncrement = 2;
 		amDamage = 2;
+		pHealthScript = FindObjectOfType<PlayerHealthScript>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-
+		pHealthScript = FindObjectOfType<PlayerHealthScript>();
 		if (!pHealthScript.playerIsActive) {
 			amSpeed = 0;
 		} 

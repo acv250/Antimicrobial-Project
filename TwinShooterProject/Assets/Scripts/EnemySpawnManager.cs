@@ -19,6 +19,7 @@ public class EnemySpawnManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		pHealthScript = FindObjectOfType<PlayerHealthScript>();
 		StartCoroutine (SpawnEnemy());
 		stopSpawn = false;
 	}
@@ -26,6 +27,7 @@ public class EnemySpawnManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		pHealthScript = FindObjectOfType<PlayerHealthScript>();
 		spawnWait = Random.Range (spawnMinWait, spawnMaxWait);
 
 		if (pHealthScript.currentHealth <= 0) 
