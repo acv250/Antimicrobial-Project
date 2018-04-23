@@ -10,17 +10,28 @@ public class GameManager : MonoBehaviour
 	//public GameObject enemyCharacter;
 
 	public GameObject gameOverCanvas;
+	public GameObject gamePausedCanvas;
 
 	public PlayerHealthScript pHealthScript;
+	public bool gameOver;
+
+	public static float resistVar;
+
+	private bool gamePaused;
 
 	// Use this for initialization
 	void Start () 
 	{
+		gamePaused = false;
+		resistVar = 1.0f;
+		gameOver = false;
 		//var spawnPoint = new Vector3 (0, 0, 0);
 		gameOverCanvas.SetActive (false);
+		gamePausedCanvas.SetActive (false);
 		Instantiate (playerCharacter);
 		playerCharacter.layer = LayerMask.NameToLayer ("UserLayer");
 		pHealthScript = FindObjectOfType<PlayerHealthScript> ();
+		StartCoroutine (upResist());
 	}
 	
 	// Update is called once per frame
@@ -28,11 +39,32 @@ public class GameManager : MonoBehaviour
 	{
 		if (pHealthScript.currentHealth <= 0) 
 		{
+			gameOver = true;
 			gameOverCanvas.SetActive (true);
 		} else 
 		{
+			gameOver = false;
 			gameOverCanvas.SetActive (false);
 		}
+
+		if (Input.GetKeyDown (KeyCode.Escape)) 
+		{
+			if (gamePaused) {
+				Time.timeScale = 1;
+				gamePausedCanvas.SetActive (false);
+			} else {
+				Time.timeScale = 0;
+				gamePausedCanvas.SetActive (true);
+			}
+			gamePaused = !gamePaused;
+		}
+	}
+
+	IEnumerator upResist()
+	{
+		yield return new WaitForSeconds (60f);
+		resistVar += 0.1f;
+		Debug.Log ("more resistance");
 	}
 
 	public void RestartGame()
@@ -43,5 +75,10 @@ public class GameManager : MonoBehaviour
 	public void QuitGame()
 	{
 		SceneManager.LoadScene (0);
+	}
+
+	public void UnpauseGame()
+	{
+		gamePaused = true;
 	}
 }

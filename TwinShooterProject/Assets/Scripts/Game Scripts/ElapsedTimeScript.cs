@@ -38,6 +38,6 @@ public class ElapsedTimeScript : MonoBehaviour
 
 		timerText.text = string.Format("{00}:{1:00.00}", minutes, seconds);
 
-
 	}
+
 }

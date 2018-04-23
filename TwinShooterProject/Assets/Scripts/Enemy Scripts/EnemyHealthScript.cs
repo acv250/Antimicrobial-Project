@@ -7,7 +7,7 @@ public class EnemyHealthScript : MonoBehaviour
 
 	public float enemyHealth;
 	public float currentEnemyHealth;
-	public float resistVar;
+	//public static float resistVar;
 	public int scoreShoot = 1;
 	public int scoreAbsorb = 5;
 	public int amDamage = 2;
@@ -25,8 +25,8 @@ public class EnemyHealthScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		resistVar = 1.0f;
-		this.currentEnemyHealth = enemyHealth * resistVar;
+		
+		this.currentEnemyHealth = enemyHealth * GameManager.resistVar;
 		rend = GetComponent<Renderer> ();
 		storedColor = rend.material.GetColor ("_Color");
 		this.enemyCollider.SetActive (true);
@@ -56,6 +56,8 @@ public class EnemyHealthScript : MonoBehaviour
 
 		if (AntimicrobialTimerScript.useAntimicrobial) 
 		{
+			flashCounter = flashLength;
+			rend.material.SetColor ("_Color", Color.cyan);
 			this.currentEnemyHealth -= amDamage;
 			ScoreScript.scoreAmount += amDamage;
 		}

@@ -24,7 +24,7 @@ public class PlayerHealthScript : MonoBehaviour
 	void Start () 
 	{
 
-		lifeText = FindObjectOfType<Text> ();
+		lifeText = GameObject.Find ("lifeText").GetComponent<Text> ();
 
 		currentHealth = startHealth;
 		rend = GetComponent<SpriteRenderer> ();

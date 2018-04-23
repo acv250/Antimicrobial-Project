@@ -6,17 +6,18 @@ using UnityEngine.SceneManagement;
 public class SoundtrackClass : MonoBehaviour 
 {
 
-	public AudioSource musicSource;
+	//public AudioSource musicSource;
+
 	// Use this for initialization
-	void Start () 
+	void Awake () 
 	{
 		GameObject[] musicObject = GameObject.FindGameObjectsWithTag ("music");
-		if (musicObject.Length > 1) {
+		if (musicObject.Length > 1) 
+		{
 			Destroy (this.gameObject);
 		}
-		DontDestroyOnLoad (this.gameObject);
 
-		musicSource.volume = PlayerPrefs.GetFloat ("bgmMusic");
+		DontDestroyOnLoad (this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -24,5 +25,4 @@ public class SoundtrackClass : MonoBehaviour
 	{
 		
 	}
-		
 }

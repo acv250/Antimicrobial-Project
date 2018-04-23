@@ -57,7 +57,7 @@ public class AntimicrobialTimerScript : MonoBehaviour {
 		{
 			useAntimicrobial = true;
 			Debug.Log ("Use Antimicrobial");
-			amTimer = 30f * amTimerIncrement;
+			amTimer = 10f * amTimerIncrement;
 
 			amTimerIncrement = amTimerIncrement + 1;
 		}

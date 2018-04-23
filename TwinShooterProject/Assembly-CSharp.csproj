@@ -58,11 +58,12 @@
      <Compile Include="Assets\Scripts\Game Scripts\LoadSceneIndex.cs" />
      <Compile Include="Assets\Scripts\Game Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\Game Scripts\StartOnInput.cs" />
+     <Compile Include="Assets\Scripts\Menu Scripts\FactScript.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\InstructionScript.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\SoundtrackClass.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\VolumeSlider.cs" />
+     <Compile Include="Assets\Scripts\Menu Scripts\ToggleMusic.cs" />
      <Compile Include="Assets\Scripts\Ocean.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\BulletControlScript.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\DamagePlayerScript.cs" />
