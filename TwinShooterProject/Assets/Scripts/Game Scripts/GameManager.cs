@@ -16,8 +16,10 @@ public class GameManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		//var spawnPoint = new Vector3 (0, 0, 0);
 		gameOverCanvas.SetActive (false);
 		Instantiate (playerCharacter);
+		playerCharacter.layer = LayerMask.NameToLayer ("UserLayer");
 		pHealthScript = FindObjectOfType<PlayerHealthScript> ();
 	}
 	

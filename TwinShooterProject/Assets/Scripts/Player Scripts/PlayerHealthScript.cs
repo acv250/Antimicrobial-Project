@@ -13,7 +13,7 @@ public class PlayerHealthScript : MonoBehaviour
 	public float flashLength;
 	private float flashCounter;
 
-	private Renderer rend;
+	private SpriteRenderer rend;
 	private Color storedColor;
 
 	public EnemyScript enemyScript;
@@ -27,8 +27,8 @@ public class PlayerHealthScript : MonoBehaviour
 		lifeText = FindObjectOfType<Text> ();
 
 		currentHealth = startHealth;
-		rend = GetComponent<Renderer> ();
-		storedColor = rend.material.GetColor ("_Color");
+		rend = GetComponent<SpriteRenderer> ();
+		rend.color = new Color (255f, 255f, 255f, 1f);
 		playerIsActive = true;
 	}
 	
@@ -48,7 +48,8 @@ public class PlayerHealthScript : MonoBehaviour
 			flashCounter -= Time.deltaTime;
 			if (flashCounter <= 0)
 			{
-				rend.material.SetColor ("_Color", storedColor);
+				Debug.Log ("change");
+				rend.color = new Color (255f, 255f, 255f, 1f);
 			}
 		}
 		lifeText.text = "LIVES: " + currentHealth;
@@ -60,7 +61,7 @@ public class PlayerHealthScript : MonoBehaviour
 		//{
 			currentHealth -= damageAmount;
 			flashCounter = flashLength;
-			rend.material.SetColor ("_Color", Color.red);
+			rend.color = new Color (255f, 0f, 0f, 1f);
 		//}
 
 	}

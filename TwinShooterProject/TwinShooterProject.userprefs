@@ -1,18 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy Scripts\EnemyHealthScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerHealthScript.cs" Line="19" Column="33" />
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DamagePlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AntimicrobialTimerScript.cs" Line="32" Column="58" />
-      <File FileName="Assets\Scripts\ElapsedTimeScript.cs" Line="23" Column="58" />
-      <File FileName="Assets\Scripts\BulletControlScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyHealthScript.cs" Line="60" Column="39" />
-      <File FileName="Assets\Scripts\EnemyScript.cs" Line="27" Column="54" />
-      <File FileName="Assets\Scripts\EnemySpawnManager.cs" Line="30" Column="58" />
-      <File FileName="Assets\Scripts\ScoreScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="16" Column="32" />
+      <File FileName="Assets\Scripts\Game Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player Scripts\PlayerHealthScript.cs" Line="52" Column="5" />
+      <File FileName="Assets\Scripts\Enemy Scripts\EnemyHealthScript.cs" Line="18" Column="2" />
+      <File FileName="Assets\Scripts\RedBloodCellScripts\RedBloodSpawnManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy Scripts\EnemyScript.cs" Line="23" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
