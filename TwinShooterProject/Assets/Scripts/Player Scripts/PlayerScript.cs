@@ -31,21 +31,17 @@ public class PlayerScript : MonoBehaviour {
 		if (this.transform.position.x <= -8.0f) 
 		{
 			transform.position = new Vector2 (-8.0f, transform.position.y);
-			Debug.Log ("out of bounds");
 		} else if (this.transform.position.x >= 8.0f) 
 		{
 			transform.position = new Vector2(8.0f, transform.position.y);
-			Debug.Log ("out of bounds");
 		}
 		//player border limits y-axis
 		if (this.transform.position.y <= -4.0f) 
 		{
 			transform.position = new Vector2 (transform.position.x, -4.0f);
-			Debug.Log ("out of bounds");
 		} else if (this.transform.position.y >= 4.0f) 
 		{
 			transform.position = new Vector2(transform.position.x, 4.0f);
-			Debug.Log ("out of bounds");
 		}
 
 
@@ -75,29 +71,6 @@ public class PlayerScript : MonoBehaviour {
 				playerShoot.isFiring = false;
 			}
 		}
-
-		//Rotate with Controller
-		/*if (useController) 
-		{
-			Vector3 playerDirection = Vector3.right * Input.GetAxisRaw ("RHorizontal") 
-				+ Vector3.up * Input.GetAxisRaw("RVertical");
-			if (playerDirection.sqrMagnitude > 0.0f) 
-			{
-				transform.rotation = Quaternion.LookRotation (playerDirection, -Vector3.up);
-			}
-
-			if (Input.GetKeyDown (KeyCode.Joystick1Button0)) 
-			{
-				playerShoot.isFiring = true;
-			}
-
-			if (Input.GetKeyUp (KeyCode.Joystick1Button0)) 
-			{
-				playerShoot.isFiring = false;
-			}
-		}*/
-
-		//Debug.Log (this.transform.position);
 	}
 
 	void FixedUpdate()
@@ -124,14 +97,6 @@ public class PlayerScript : MonoBehaviour {
 
 		if (useController) 
 		{
-
-			/*Vector3 playerDirection = Vector3.right * Input.GetAxisRaw ("RHorizontal") +
-			                          Vector3.up * -Input.GetAxisRaw ("RVertical");
-
-			if (playerDirection.sqrMagnitude > 0.0f) 
-			{
-				this.transform.rotation = Quaternion.LookRotation (playerDirection);
-			}*/
 
 			Vector3 playerDirection = new Vector3 (Input.GetAxisRaw("RHorizontal"), Input.GetAxisRaw("RVertical"), 0.0f);
 

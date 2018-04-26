@@ -14,16 +14,9 @@ public class ToggleMusic : MonoBehaviour
 		musicSource.Play ();
 		pauseMusic = false;
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
 
 	public void Toggle()
 	{
-		
 		if (pauseMusic) 
 		{
 			musicSource.UnPause ();
@@ -33,6 +26,5 @@ public class ToggleMusic : MonoBehaviour
 			musicSource.Pause ();
 			pauseMusic = true;
 		}
-
 	}
 }

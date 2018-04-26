@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
 		gamePaused = false;
 		resistVar = 1.0f;
 		gameOver = false;
-		//var spawnPoint = new Vector3 (0, 0, 0);
 		gameOverCanvas.SetActive (false);
 		gamePausedCanvas.SetActive (false);
 		Instantiate (playerCharacter);
@@ -64,7 +63,6 @@ public class GameManager : MonoBehaviour
 	{
 		yield return new WaitForSeconds (60f);
 		resistVar += 0.1f;
-		Debug.Log ("more resistance");
 	}
 
 	public void RestartGame()
@@ -79,6 +77,6 @@ public class GameManager : MonoBehaviour
 
 	public void UnpauseGame()
 	{
-		gamePaused = true;
+		gamePaused = false;
 	}
 }

@@ -48,7 +48,6 @@ public class PlayerHealthScript : MonoBehaviour
 			flashCounter -= Time.deltaTime;
 			if (flashCounter <= 0)
 			{
-				Debug.Log ("change");
 				rend.color = new Color (255f, 255f, 255f, 1f);
 			}
 		}
@@ -57,12 +56,8 @@ public class PlayerHealthScript : MonoBehaviour
 
 	public void HurtPlayer(int damageAmount)
 	{
-		//if (enemyScript.enemyIsActive) 
-		//{
-			currentHealth -= damageAmount;
-			flashCounter = flashLength;
-			rend.color = new Color (255f, 0f, 0f, 1f);
-		//}
-
+		currentHealth -= damageAmount;
+		flashCounter = flashLength;
+		rend.color = new Color (255f, 0f, 0f, 1f);
 	}
 }

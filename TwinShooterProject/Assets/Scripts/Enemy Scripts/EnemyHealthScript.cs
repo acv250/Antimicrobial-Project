@@ -43,7 +43,6 @@ public class EnemyHealthScript : MonoBehaviour
 			rend.material.SetColor ("_Color", Color.gray);
 			this.enemyCollider.SetActive (false);
 			this.playerCollider.SetActive (true);
-			//Destroy (gameObject);
 		}
 		if (flashCounter > 0) 
 		{
@@ -80,7 +79,6 @@ public class EnemyHealthScript : MonoBehaviour
 
 		if (this.currentEnemyHealth <= 0 && this.playerCollider.activeInHierarchy) 
 		{
-			Debug.Log ("dab");
 			if (other.gameObject.tag == "Player") 
 			{
 				Destroy (this.gameObject);
